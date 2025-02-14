@@ -1,0 +1,386 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Arial", serif;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+.header {
+    display: flex;
+    background: rgb(13, 137, 194);
+}
+
+.logo_button {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 100px;
+    max-width: 1750px;
+    margin-left: 1vw;
+}
+
+.logo_button button {
+    width: 150px;
+    height: 50px;
+    margin-top: 24px;
+    margin-right: left;
+    margin-right: 3vw;
+    font-size: 1rem;
+    border-radius: 7px;
+    background-color: rgb(35, 22, 211);
+    cursor: pointer;
+    color: white;
+}
+
+.logo_button button:hover {
+    transition: all 0.3s ease;
+    background-color: rgb(0, 81, 255);
+}
+
+.logo {
+    display: flex;
+    margin-top: 20px;
+    margin-left: 3vw;
+    font-size: 2rem;
+    text-decoration: none;
+    color: orange;
+}
+
+.main_container {
+    display: flex;
+    background-color: rgb(13, 106, 228);
+}
+
+.main_content {
+    display: flex;
+    width: 60%;
+    padding: 20px;
+    flex-direction: column;
+    justify-content: flex-start;
+    background-color: rgb(13, 106, 228);
+    margin-left: 3vw;
+}
+
+.main_container h1 {
+    font-size: 3rem;
+    margin-block-end: 40px;
+    color: white;
+}
+
+.main_content p {
+    width: 100%;
+    font-size: 2rem;
+    margin-block-end: 15px;
+    color: white;
+}
+
+.main_image {
+    width: 55%;
+}
+
+.main_image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.top_button, .middle_button, .bottom_button {
+    width: 400px;
+    padding: 15px 35px;
+    font-size: 1rem;
+    border: 2px solid;
+    border-radius: 5px;
+    cursor: pointer;
+    position: relative;
+    background-color: rgb(9, 183, 236);
+}
+
+.top_button:hover, .middle_button:hover, .bottom_button:hover {
+    background: rgb(16, 53, 155);
+    color: white;
+}
+
+.top_button, .middle_button {
+    margin-top: 50px;
+}
+
+.bottom_button {
+    margin-bottom: 25px;
+}
+
+.main_info_section {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 50px;
+    overflow: hidden;
+}
+
+.background_image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+
+.main_info {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.additional_info {
+    margin: 1vw;
+    top: 1.5vw;
+    width: 95%;
+    max-width: 470px;
+    border-radius: 20px;
+    background-color: rgba(0, 0, 0, 0.7);
+    position: relative;
+    color: white;
+    padding: 20px 20px;
+}
+
+.additional_info p {
+    position: relative;
+    margin-bottom: 45px;
+    top: 40px;
+}
+
+.step_by_step {
+    background-color: rgb(13, 106, 228);
+    padding: 30px;
+    text-align: center;
+}
+
+.step_by_step h2 {
+    margin-top: 10px;
+    margin-bottom: 50px;
+    color: white;
+    font-size: 2rem;
+}
+
+.all_steps {
+    margin-right: 90px;
+    margin-left: 90px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, auto);
+    gap: 65px;
+    margin-bottom: 42px;
+}
+
+.one_step {
+    display: flex;
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: left;
+    gap: 25px;
+}
+
+.numeration {
+    font-size: 4rem;
+    font-weight: bold;
+}
+
+.step_info {
+    display: flex;
+    flex-direction: column;
+}
+
+.step_info h3 {
+    font-size: 1.5rem;
+}
+
+.step_info p {
+    margin-top: 10px;
+}
+
+.footer_container {
+    background-color: rgb(51, 5, 175);
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.footer_content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer_content .logo {
+    margin-right: 25vw;
+    margin-bottom: 2vw;
+}
+
+.footer_links {
+    display: flex;
+    justify-content: center;
+}
+
+.footer_link_wrapper {
+    display: flex;
+    gap: 3vw;
+}
+
+.footer_link_items {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin: 16px;
+    text-align: left;
+    width: 160px;
+    box-sizing: border-box;
+}
+
+.footer_link_items a {
+    display: flex;
+    color: white;
+    text-decoration: none;
+    margin-bottom: 15px;
+    margin-left: -20vw;
+
+}
+
+@media (max-width: 768px) {
+    .logo_button {
+        padding: 0 20px;
+    }
+
+    .main_container {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .main_container h1 {
+        font-size: 2rem;
+    }
+    
+    .main_content p {
+        font-size: 1.5rem;
+    }
+
+    .main_image {
+        width: 100%;
+    }
+
+    .main_info {
+        padding-top: 50px;
+    }
+
+    .additional_info {
+        margin-bottom: 5vh;
+    }
+
+    .step_by_step {
+        height: auto;
+    }
+
+    .all_steps {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .top_button {
+        margin-bottom: 50px;
+    }
+
+    .footer_container {
+        padding-left: 40vw;
+        font-size: 0.8rem;
+    }
+
+    .footer_content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        width: 200%;
+    }
+
+    .footer_content .logo {
+        margin-left: 10vw;
+        width: 70vw;
+    }
+
+    .footer_link_items a {
+        min-width: 100vw;
+        margin-left: -60vw;
+        justify-content: center;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1424px) {
+    .logo_button {
+        padding: 0 20px;
+    }
+
+    .main_container {
+        flex-direction: row;
+        height: auto;
+        background-color: rgb(13, 106, 228);
+    }
+
+    .main_content {
+        width: 60%;
+        padding: 20px;
+    }
+
+    .top_button {
+        margin-bottom: 50px;
+    }
+
+    .main_image {
+        width: 40%;
+    }
+
+    .main_info {
+        flex-direction: row;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        padding-top: 50px;
+        gap: 5vh;
+    }
+
+    .step_by_step {
+        height: auto;
+    }
+
+    .all_steps {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .footer_content {
+        display: flex;
+        flex-direction: column;
+        width: 30vw;
+        padding-left: 50vw;
+    }
+
+    .footer_content .logo {
+        width: 30vw;
+        margin-bottom: 1.5vw;
+    }
+
+    .footer_container .logo {
+        min-width: 500px;
+        margin-right: 35vw;
+    }
+
+    .footer_link_wrapper {
+        gap: 7vw;
+        padding-right: 115vw;
+    }
+    
+    .footer_link_items a {
+        min-width: 120vw;
+        justify-content: center;
+    }
+}

@@ -1,0 +1,264 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Arial", serif;
+}
+
+.heading {
+    display: flex;
+    background-color: rgb(41, 41, 41);
+}
+
+.logo_search {
+    display: flex;
+    justify-content: space-between;
+    height: 100px;
+    width: 100%;
+}
+
+#logo {
+    display: flex;
+    padding-top: 25px;
+    padding-left: 5vw;
+    text-decoration: none;
+    font-size: 2rem;
+    color: orange;
+}
+
+#search_form {
+    display: flex;
+    align-items: center;
+    position: relative;
+    margin-right: 3vw;
+    width: 30vw;
+}
+
+#search_input {
+    height: 50px;
+    font-size: 15px;
+    border-radius: 10px;
+    border: 3px solid lightblue;
+    flex: 1;
+}
+
+#search_button {
+    position: absolute;
+    background-color: transparent;
+    right: 10px;
+    top: 4vh;
+    border: none;
+    cursor: pointer;
+}
+
+#search_button img {
+    height: 20px;
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+}
+
+.basic_information {
+    display: flex;
+    height: 100vh;
+}
+
+.sections_main {
+    background: rgb(19, 123, 241);
+    padding: 15px;
+    display: flex;
+    justify-content: center;
+    border: 3px solid orange;
+    border-radius: 15px;
+    margin: 1vh 3vh;
+}
+
+.sections_main ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+}
+
+.sections_main ul li {
+    margin: 0 3vw;
+}
+
+.sections_main ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.4rem;
+}
+
+.sidebar {
+    background-color: rgb(13, 137, 194);
+    padding: 25px;
+    font-size: 1rem;
+    display: flex;
+    flex-direction: column;
+    border: 5px solid #1a0cdd;
+    border-radius: 15px;
+    margin-left: 2vw;
+    min-width: 17vw;
+    height: 70vh;
+}
+
+.background {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+.background img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.trends {
+    height: 600px;
+    margin-right: 2vw;
+    height: 70vh;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;   
+}
+
+.sidebar a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2rem;
+}
+
+.main_info {
+    display: flex;
+    flex-direction: column;
+    gap: 3vh;
+    flex: 1;
+    margin-left: 2vw;
+}
+
+.text_one {
+    position: relative;
+    background-color: white;
+    padding: 450px 25px 25px;
+    border: 5px solid lightblue;
+    border-radius: 15px;
+}
+
+.text_two {
+    background-color: white;
+    padding: 10px 25px 25px;
+    border: 5px solid lightblue;
+    border-radius: 15px;
+}
+
+.image_container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+.image_container img {
+    border-radius: 9px 9px 0 0;
+    width: 100%;
+    height: 45vh;
+}
+
+@media (max-width: 768px) {
+    .logo_search {
+        flex-direction: column;
+        align-items: center;
+        height: 175px;
+    }
+
+    #search_form {
+        margin-bottom: 30px;
+        width: 65vw;
+    }
+
+    #search_button {
+        top: 1.5vh;
+    }
+
+    .sections_main {
+        width: 50vw;
+        margin: 3vh 0vh 5vw 25vw;
+    }
+
+    .sections_main ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .sections_main ul li {
+        margin: 10px 0;
+    }
+
+    .basic_information {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .sidebar {
+        width: 65vw;
+        margin-bottom: 7vh;
+    }
+
+    .text_one, .text_two {
+        margin-left: 3vw;
+        max-width: 90vw;
+    }
+
+    .text_one {
+        font-size: 15px;
+        height: 575px;
+        padding: 410px 25px 25px;
+    }
+
+    .text_two {
+        height: 200px;
+    }
+
+    .content2 {
+        font-size: 15px;
+        height: 190px;
+        min-width: 0vw;
+    }
+
+    .image_container img {
+        height: 400px;
+    }
+
+    .sidebar ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .trends {
+        margin-top: 5vh;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1424px) {
+    .sidebar {
+        width: 20vw;
+        min-width: 200px;
+    }
+    
+    .text_one {
+        padding: 37vh 1vw 1vh;
+    }
+
+    .image_container img {
+        height: 35vh;
+    }
+}
