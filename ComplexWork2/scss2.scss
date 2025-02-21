@@ -1,0 +1,315 @@
+$white-color: white;
+$orange-color: orange;
+$black-color: black;
+$blue-color: rgb(16, 127, 218);
+$darkblue-color: rgb(4, 0, 255);
+$lightblue-color: rgb(75, 184, 252);
+$lightskyblue-color: rgb(135, 206, 250);
+$button-background-color: rgb(0, 110, 255);
+$back-color: rgb(27, 109, 177);
+$transparent-color: transparent;
+
+$font: "Arial", serif;
+$font-size-primary: 1rem;
+$font-size-small: 1.1rem;
+$font-size-medium: 1.7rem;
+$font-size-large: 2.2rem;
+
+$margin-primary: 10px;
+
+$padding-primary: 10px;
+$padding-top-item: 20px;
+
+$border-button: 3px;
+$border-radius-primary: 5px;
+$border-radius-button: 7px;
+$border-radius-product: 15px;
+
+$grid-columns-primary: 1fr;
+$gap-small: 20px;
+
+@mixin width-height($width: 100%, $height: 100%) {
+    width: $width;
+    height: $height;
+}
+
+@mixin border-border-radius($border: $border-button solid $darkblue-color, $border-radius: $border-radius-button) {
+    border: $border;
+    border-radius: $border-radius;
+}
+
+@mixin border-background-color($border: $transparent-color, $background-color: $blue-color) {
+    border: $border;
+    background-color: $background-color;
+}
+
+@mixin color-background-color($color, $background-color: $transparent-color) {
+    color: $color;
+    background-color: $background-color;
+}
+
+@mixin font-size-decoration-background($font-size: $font-size-small, $text-decoration: none, $background-color: $transparent-color) {
+    font-size: $font-size;
+    text-decoration: $text-decoration;
+    background-color: $background-color;
+}
+
+@mixin grid-columns-gap($grid-template-columns: $grid-columns-primary, $gap: $gap-small) {
+    grid-template-columns: $grid-template-columns;
+    gap: $gap;
+}
+
+@mixin grid-template-columns-rows($grid-template-columns, $grid-template-rows) {
+    grid-template-columns: $grid-template-columns;
+    grid-template-rows: $grid-template-rows;
+}
+
+* {
+    margin: 0;
+    box-sizing: border-box;
+    font-family: $font;
+    background-color: $back-color;
+}
+
+.header_container {
+    display: grid;
+    height: 100px;
+    grid-template-columns: 30vw 40vw 5vw 24vw;
+
+    button {
+        @include border-border-radius($border-button solid $darkblue-color);
+        height: 50px;
+        cursor: pointer;
+        background-color: $button-background-color;
+
+        img {
+            background-color: $button-background-color;
+        }
+    
+        &:hover {
+            background-color: $lightskyblue-color;
+        }
+    }
+}
+
+.item {
+    @include border-background-color;
+    padding-top: $padding-top-item;
+}
+
+#header-logo {
+    @include font-size-decoration-background($font-size-large);
+    @include color-background-color($orange-color);
+    margin-left: 2vw;
+}
+
+#search-input {
+    @include width-height(38vw, 50px);
+    @include border-border-radius(solid $lightskyblue-color);
+    @include color-background-color($white-color, $white-color);
+    font-size: $font-size-small;
+
+    &[type=text]:focus {
+        @include color-background-color($black-color, $lightblue-color);
+    }
+}
+
+#search-button {
+    transform: translateX(25%);
+}
+
+.search_button img {
+    @include width-height(30px, 30px);
+    background-color: $blue-color;
+}
+
+#cart-button {
+    width: 125px;
+    margin-left: 12vw;
+    font-size: $font-size-small;
+}
+
+.main-content {
+    display: grid;
+    padding: 25px 25px;
+    grid-template-columns: 300px auto;
+    gap: $gap-small;
+}
+
+.sidebar_left {
+    @include font-size-decoration-background($background-color: $blue-color);
+    @include border-border-radius($border-radius-primary solid $orange-color, 12px);
+    max-width: 50vw;
+    padding: 25px;
+    grid-template-rows: auto 1fr;
+
+    ul {
+        display: grid;
+        list-style: none;
+        background-color: $transparent-color;
+    }
+
+    li {
+        margin: 10px 10px 10px -20px;
+        background-color: $transparent-color;
+    }
+
+    a {
+        @include font-size-decoration-background;
+        @include color-background-color($white-color);
+    }
+}
+
+.product-grid {
+    @include grid-columns-gap(repeat(4, 1fr), 1vw);
+    display: grid;
+}
+
+.product-item {
+    @include border-border-radius(3px solid $white-color, $border-radius-product);
+    background-color: $white-color;
+}
+
+.product-image {
+    @include width-height($height: 200px);
+    display: block;
+    border-radius: $border-radius-product;
+}
+
+.product-info {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    padding: $padding-primary;
+    background-color: $transparent-color;
+}
+
+.product-details {
+    background-color: $transparent-color;
+}
+
+.product-title, .product-price {
+    @include font-size-decoration-background;
+    margin: $margin-primary;
+}
+
+.product-button {
+    @include color-background-color($white-color, $darkblue-color);
+    @include border-border-radius(3px solid $orange-color, 10px);
+    height: 70px;
+    margin: 30px auto 0px auto;
+    cursor: pointer;
+
+    &:hover {
+        transition: all 0.3s ease;
+        background-color: $blue-color;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1424px) {
+    .header_container {
+        grid-template-columns: 25vw 38vw 8vw 27vw;
+    }
+
+    #header-logo {
+        font-size: $font-size-medium;
+    }
+
+    .logo {
+        text-align: center;
+    }
+
+    #search-input {
+        width: 36vw;
+    }
+
+    #cart-button {
+        align-items: left;
+        transform: translateX(-25%);
+    }
+
+    .main-content {
+        padding: $padding-primary;
+        grid-template-columns: $grid-columns-primary;
+    }
+
+    .sidebar_left {
+        width: 40vw;
+        margin: 0 auto 0 auto;
+        text-align: center;
+    }
+
+    .product-grid {
+        @include grid-columns-gap(repeat(2, 1fr));
+    }
+
+    .product-button {
+        @include width-height(100px, 70px);
+        font-size: $font-size-primary;
+    }
+
+    .product-image {
+        height: 300px;
+    }
+}
+
+@media (max-width: 768px) {
+    .header_container {
+        @include grid-template-columns-rows(55vw 10vw 32vw, auto auto auto);
+        height: 200px;
+    }
+
+    .logo {
+        grid-column: 1 / -1;
+        text-align: center;
+    }
+
+    #search-input {
+        width: 48vw;
+        transform: translateX(15%);
+    }
+
+    #cart-button {
+        font-size: $font-size-small;
+        transform: translateX(-25%);
+    }
+
+    .sidebar_left {
+        width: 35vw;
+        margin: 0 auto 0 auto;
+    }
+
+    .header-container {
+        img {
+            @include width-height(25px, 25px);
+            background-color: $blue-color;
+        }
+
+        input {
+            @include width-height(50vw, 50px);
+        }
+    }
+
+    .main-content {
+        grid-template-columns: $grid-columns-primary;
+    }
+
+    .sidebar_left {
+        width: 40vw;
+        margin-top: -3vh;
+        text-align: center;
+    }
+
+    .product-grid {
+        @include grid-columns-gap;
+        width: 100%;
+    }
+
+    .product-image {
+        height: 300px;
+    }
+
+    .product-button {
+        width: 125px;
+        font-size: $font-size-small;
+    }
+}

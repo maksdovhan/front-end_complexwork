@@ -1,0 +1,227 @@
+@white-color: white;
+@orange-color: orange;
+@darkorange-color: darkorange;
+@lightblue-color: rgb(0, 195, 255);
+@lightpurple-color: rgb(64, 91, 167);
+@black-transparent-color: rgba(0, 0, 0, 0.7);
+
+@font: "Arial", serif;
+@font-size-primary: 1rem;
+@font-size-small: 1.5rem;
+@font-size-medium: 2.5rem;
+@font-size-large: 4rem;
+
+@padding-primary: 20px;
+@padding-email: 12px;
+
+@border-radius-primary: 20px;
+@border-radius-input: 7px;
+
+@z-index-background: -10;
+
+.width-height(@width: 100%, @height: 100%) {
+    width: @width;
+    height: @height;
+}
+
+.font-size-color-background(@font-size: @font-size-primary, @color: @white-color, @background-color: transparent) {
+    font-size: @font-size;
+    color: @color;
+    background-color: @background-color;
+}
+
+.border-border-radius(@border: 2px solid @white-color, @border-radius: @border-radius-primary) {
+    border: @border;
+    border-radius: @border-radius;
+}
+
+.padding-background-color(@padding: @padding-primary, @background-color: @black-transparent-color) {
+    padding: @padding;
+    background-color: @background-color;
+}
+
+.text-vertical-align(@text-align, @vertical-align) {
+    text-align: @text-align;
+    vertical-align: @vertical-align;
+}
+
+.color-text-decoration(@color: @white-color, @text-decoration: none) {
+    color: @color;
+    text-decoration: @text-decoration;
+}
+
+* {
+    margin: 0;
+    font-family: @font;
+}
+
+.background {
+    .width-height;
+    position: fixed;
+    z-index: @z-index-background;
+
+    img {
+        .width-height;
+        object-fit: cover;
+    }
+}
+
+table {
+    margin: auto;
+    width: 70%;
+    border-spacing: 20px;
+}
+
+td {
+    text-align: center;
+}
+
+.logo {
+    padding: 3vh 0 5vh 0;
+}
+
+.logo_text {
+    text-align: center;
+
+    h3 {
+        .font-size-color-background(@font-size-large, @orange-color);
+    }
+
+    p {
+        .font-size-color-background(@font-size-medium, @darkorange-color);
+    }
+}
+
+.content {
+    .padding-background-color;
+    border-radius: @border-radius-primary;
+}
+
+.images {
+    display: inline-block;
+    margin-right: 20px;
+}
+
+.image {
+    .width-height(15vw, 30vh);
+    border-radius: @border-radius-primary;
+}
+
+.texts {
+    .text-vertical-align(left, top);
+    display: inline-block;
+    width: 13vw;
+    color: @white-color;
+
+    h3 {
+        font-size: @font-size-small;
+        padding-bottom: 2vh;
+    }
+
+    p {
+        font-size: @font-size-primary;
+    }
+}
+
+.input_email {
+    .font-size-color-background(@background-color: @white-color);
+    .border-border-radius(@border-radius: @border-radius-input);
+    width: 40%;
+    margin: 25px 15px 120px 0;
+    padding: @padding-email;
+    text-align: left;
+}
+
+.submit_email {
+    .font-size-color-background(@background-color: @lightblue-color);
+    .border-border-radius(@border-radius: 5px);
+    padding: @padding-email;
+    cursor: pointer;
+
+    &:hover {
+        .font-size-color-background(@background-color: @lightpurple-color);
+        transition: 0.3s ease;
+    }
+}
+
+footer {
+    .padding-background-color(13px, @lightpurple-color);
+    text-align: center;
+}
+
+.additional_info {
+    width: 50%;
+    margin-top: 15px;
+    border-collapse: collapse;
+}
+
+.legal_info a {
+    .color-text-decoration;
+    display: block;
+}
+
+@media (max-width: 768px) {
+    .logo_text h3 {
+        font-size: 3rem;
+    }
+
+    .content {
+        display: block;
+        margin-bottom: 50px;
+    }
+
+    .image {
+        .width-height(50vw, 25vh);
+        margin-left: 20px;
+    }
+
+    .texts {
+        width: 45vw;
+
+        p {
+            margin-top: 15px;
+        }
+    }
+
+    .input_email {
+        width: 80%;
+        margin: 0 auto 30px auto;
+    }
+
+    .submit_email {
+        margin-bottom: 150px;
+    }
+
+    .additional_info {
+        width: 85%;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1424px) {
+    .images {
+        width: 25vw;
+    }
+
+    .image {
+        .width-height(27vw, 30vh);
+    }
+
+    .texts {
+        .width-height(25vw, 25vh);
+        padding: 15px;
+
+        h3 {
+            margin: 0;
+            text-align: center;
+        }
+
+        p {
+            margin-top: 15px;
+            text-align: left;
+        }
+    }
+
+    .input_email {
+        width: 50%;
+    }
+}

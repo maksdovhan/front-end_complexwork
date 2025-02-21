@@ -1,0 +1,153 @@
+$white-color: white
+$black-color: black
+$orange-color: orange
+$lightblue-color:  rgb(13, 137, 194)
+$lightskyblue-color: rgb(164, 197, 248)
+$back-color: rgb(87, 145, 221)
+
+$font: "Arial", serif
+$font-size-primary: 1rem
+$font-size-large: 2rem
+
+$height-image: 400px
+
+$border-radius-image: 15px
+$border-radius-sidebar: 25px
+
+$padding-primary: 20px
+$padding-sidebar: 5px
+
+$margin-top-sidebar: 50px
+
+@mixin color-background-color($color: $black-color, $background-color: transparent)
+    color: $color
+    background-color: $background-color
+
+@mixin width-height($width: 100%, $height: 100%)
+    width: $width
+    height: $height
+
+@mixin float-margin($float, $margin)
+    float: $float
+    margin: $margin
+
+@mixin padding-margin-top-sidebar($padding: $padding-sidebar, $margin-top: $margin-top-sidebar)
+    padding: $padding
+    margin-top: $margin-top
+
+*
+    margin: 0
+    font-family: $font
+
+.header
+    height: 75px
+    background-color: $lightblue-color
+
+.logo_text
+    @include float-margin(left, 15px 0 0 40vw)
+    @include color-background-color($orange-color, $lightblue-color)
+    font-size: $font-size-large
+
+.main
+    width: 100%
+    overflow: hidden
+    position: absolute
+    background-color: $back-color
+
+.general_info
+    @include width-height(75%, 100%)
+    @include color-background-color($white-color, $back-color)
+    float: left
+    box-sizing: border-box
+
+    h1, p
+        margin: 15px 0 0 30px
+
+.image_one
+    @include width-height(60%, 400px)
+    @include float-margin(left, 15px -85px 15px 30px)
+
+    img
+        @include width-height(85%, 400px)
+        border-radius: $border-radius-image
+
+.image_pair
+    @include width-height(60%, 400px)
+    @include float-margin(left, 15px -85px 15px 30px)
+
+    img
+        @include width-height(42.5%, 400px)
+        float: left
+        border-radius: $border-radius-image
+
+.sidebar
+    @include width-height(20%)
+    @include color-background-color($white-color, $lightskyblue-color)
+    position: absolute
+    padding: $padding-primary
+    right: 0
+    font-size: $font-size-primary
+
+    img
+        @include width-height(auto, auto)
+        object-fit: cover
+        margin-top: 50px
+        border-radius: 25px
+
+    h3
+        @include padding-margin-top-sidebar
+        @include color-background-color
+
+    p
+        @include padding-margin-top-sidebar($margin-top: 15px)
+        @include color-background-color($background-color: $lightskyblue-color)
+
+@media (max-width: 768px)
+    .logo_text
+        margin-left: 25vw
+
+    .general_info
+        @include float-margin(none, 1vw)
+        width: 95%
+
+    .sidebar
+        @include width-height($height: auto)
+        position: relative
+
+        img
+            margin: -58vw 0 0 55vw
+
+        h3, p
+            width: 50%
+            margin-top: 2vw
+
+    .image_one
+        @include width-height($height: 60%)
+        @include float-margin(none, 0 1vw 0 1.5vw)
+
+        img
+            @include width-height($height: 40vh)
+
+    .image_pair
+        @include width-height($height: 60%)
+        @include float-margin(none, 0 1vw 0 1.5vw)
+
+        img
+            @include width-height(50%, 40vh)
+            margin-bottom: 3vw
+
+@media (min-width: 769px) and (max-width: 1424px)
+    .sidebar
+        width: 30%
+
+    .general_info
+        @include width-height(75vw)
+
+        h1, p
+            width: 75%
+            margin-left: 30px
+
+    .image_one, .image_pair
+        @include width-height(92%)
+        margin-right: 100px
+        margin-left: 30px

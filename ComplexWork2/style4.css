@@ -1,0 +1,154 @@
+* {
+  margin: 0;
+  font-family: "Arial", serif;
+}
+
+.header {
+  height: 75px;
+  background-color: rgb(13, 137, 194);
+}
+
+.logo_text {
+  float: left;
+  margin: 15px 0 0 40vw;
+  color: orange;
+  background-color: rgb(13, 137, 194);
+  font-size: 2rem;
+}
+
+.main {
+  width: 100%;
+  overflow: hidden;
+  position: absolute;
+  background-color: rgb(87, 145, 221);
+}
+
+.general_info {
+  width: 75%;
+  height: 100%;
+  color: white;
+  background-color: rgb(87, 145, 221);
+  float: left;
+  box-sizing: border-box;
+}
+.general_info h1, .general_info p {
+  margin: 15px 0 0 30px;
+}
+
+.image_one {
+  width: 60%;
+  height: 400px;
+  float: left;
+  margin: 15px -85px 15px 30px;
+}
+.image_one img {
+  width: 85%;
+  height: 400px;
+  border-radius: 15px;
+}
+
+.image_pair {
+  width: 60%;
+  height: 400px;
+  float: left;
+  margin: 15px -85px 15px 30px;
+}
+.image_pair img {
+  width: 42.5%;
+  height: 400px;
+  float: left;
+  border-radius: 15px;
+}
+
+.sidebar {
+  width: 20%;
+  height: 100%;
+  color: white;
+  background-color: rgb(164, 197, 248);
+  position: absolute;
+  padding: 20px;
+  right: 0;
+  font-size: 1rem;
+}
+.sidebar img {
+  width: auto;
+  height: auto;
+  object-fit: cover;
+  margin-top: 50px;
+  border-radius: 25px;
+}
+.sidebar h3 {
+  padding: 5px;
+  margin-top: 50px;
+  color: black;
+  background-color: transparent;
+}
+.sidebar p {
+  padding: 5px;
+  margin-top: 15px;
+  color: black;
+  background-color: rgb(164, 197, 248);
+}
+
+@media (max-width: 768px) {
+  .logo_text {
+    margin-left: 25vw;
+  }
+  .general_info {
+    float: none;
+    margin: 1vw;
+    width: 95%;
+  }
+  .sidebar {
+    width: 100%;
+    height: auto;
+    position: relative;
+  }
+  .sidebar img {
+    margin: -58vw 0 0 55vw;
+  }
+  .sidebar h3, .sidebar p {
+    width: 50%;
+    margin-top: 2vw;
+  }
+  .image_one {
+    width: 100%;
+    height: 60%;
+    float: none;
+    margin: 0 1vw 0 1.5vw;
+  }
+  .image_one img {
+    width: 100%;
+    height: 40vh;
+  }
+  .image_pair {
+    width: 100%;
+    height: 60%;
+    float: none;
+    margin: 0 1vw 0 1.5vw;
+  }
+  .image_pair img {
+    width: 50%;
+    height: 40vh;
+    margin-bottom: 3vw;
+  }
+}
+@media (min-width: 769px) and (max-width: 1424px) {
+  .sidebar {
+    width: 30%;
+  }
+  .general_info {
+    width: 75vw;
+    height: 100%;
+  }
+  .general_info h1, .general_info p {
+    width: 75%;
+    margin-left: 30px;
+  }
+  .image_one, .image_pair {
+    width: 92%;
+    height: 100%;
+    margin-right: 100px;
+    margin-left: 30px;
+  }
+}
