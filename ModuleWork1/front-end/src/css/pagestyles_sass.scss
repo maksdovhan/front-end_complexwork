@@ -1,0 +1,315 @@
+$font: "Courier", serif;
+
+$whitesmoke-color: whitesmoke;
+$lightgray-color: lightgray;
+$black-color: black;
+$back-color: rgb(0, 87, 178);
+$blue-color: rgb(0, 120, 250);
+$background-color-hover: rgb(0, 153, 255);
+$background-color-button: rgb(5, 163, 255);
+$background-color-button-hover: rgb(13, 29, 255);
+
+$font-size-small: 0.8rem;
+$font-size-primary: 1rem;
+$font-size-medium: 2rem;
+$font-size-large: 3.5rem;
+$font-size-megalarge: 4rem;
+
+$border-radius-primary: 10px;
+$border-wrapper: 5px solid black;
+$border-radius-wrapper: 25px;
+$border-input: 2px solid darkgray;
+$border-radius-input: 10px;
+$border-button: 3px solid rgb(0, 46, 253);
+$border-input-focus: 3px solid gray;
+$background-color-focus: lightgray;
+$border-radius-button: 10px;
+$border-button-hover: 2px solid whitesmoke;
+
+$padding-left-input: 10px;
+
+$transition-primary: 0.5s ease;
+
+@mixin display-text-align($display: grid, $text-align: center) {
+    display: $display;
+    text-align: $text-align;
+}
+
+@mixin width-height($width: 100%, $height: 100%) {
+    width: $width;
+    height: $height;
+}
+
+@mixin font-size-weight-color($font-size: $font-size-primary, $font-weight: $normal, $color: $whitesmoke-color) {
+    font-size: $font-size;
+    font-weight: $font-weight;
+    color: $color;
+}
+
+@mixin border-border-radius-background($border, $border-radius: $border-radius-primary, $background-color: transparent) {
+    border: $border;
+    border-radius: $border-radius;
+    background-color: $background-color;
+}
+
+* {
+    margin: 0;
+    font-family: $font;
+}
+
+body {
+    background: $back-color;
+}
+
+/* login_page styles */
+
+.login_form_container {
+    @include border-border-radius-background($border-wrapper, $border-radius-wrapper, $blue-color);
+    display: grid;
+    grid-template-columns: 3fr 4fr;
+    margin: 15vh 15vw 0px 15vw;
+}
+
+.main_info_login {
+    @include display-text-align;
+}
+
+.line {
+    @include font-size-weight-color($font-size-large, bold);
+    padding-top: 50px;
+
+    &:nth-child(2) {
+        @include font-size-weight-color($font-size-medium, normal);
+        padding-top: 0px;
+    }
+}
+
+.login_form {
+    display: grid;
+    grid-template-rows: repeat(4, 1fr);
+    padding: 20px 0px 20px 0px;
+    gap: 15px;
+
+    input {
+        @include width-height(50%, 50px);
+        @include border-border-radius-background($border-input, $border-radius-input, $whitesmoke-color);
+        font-size: $font-size-small;
+        padding-left: 10px;
+        margin: 0px auto 0px auto;
+        transition: $transition-primary;
+
+        &:focus {
+            @include border-border-radius-background($border-input-focus, $border-radius-input, $lightgray-color);
+        }
+    }
+
+    button {
+        @include width-height(50%);
+        @include border-border-radius-background($border-button, $border-radius-button, $background-color-button);
+        font-size: $font-size-primary;
+        margin: 0px auto 0px auto;
+        cursor: pointer;
+        transition: $transition-primary;
+
+        &:hover {
+            @include border-border-radius-background($border: $border-button-hover, $background-color: $background-color-button-hover);
+            color: $whitesmoke-color;
+        }
+    }
+
+    .have_account {
+        @include width-height(40%);
+        margin: 0px auto 0px auto;
+        background-color: rgb(0, 110, 255);
+    }
+}
+
+footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 75px;
+    background: $background-color-hover;
+    text-align: center;
+}
+
+/* register_page styles */
+
+.register_form_container {
+    @include border-border-radius-background($border-wrapper, $border-radius-wrapper, $blue-color);
+    display: grid;
+    grid-template-rows: 1fr 3fr;
+    margin: 7vh 15vw 0px 15vw;
+}
+
+.main_info_register {
+    @include font-size-weight-color($font-size-megalarge, bold);
+    display: grid;
+    gap: 50px;
+    text-align: center;
+
+    .line {
+        margin-top: -30px;
+    }
+}
+
+.register_form {
+    display: grid;
+
+    input {
+        @include width-height(350px, 35px);
+        @include border-border-radius-background($border-input, $border-radius-input, $whitesmoke-color);
+        font-size: $font-size-primary;
+        padding-left: $padding-left-input;
+        margin: 50px auto 0px auto;
+        transition: $transition-primary;
+    }
+
+    button {
+        @include width-height(300px, 50px);
+        @include border-border-radius-background($border-button, $border-radius-button, $background-color-button);
+        margin: 75px auto 50px auto;
+        font-size: $font-size-primary;
+        cursor: pointer;
+        transition: $transition-primary;
+
+        &:hover {
+            @include border-border-radius-background($border: $border-button-hover, $background-color: $background-color-button-hover);
+            color: $whitesmoke-color;
+        }
+    }
+}
+
+/* linkshortener_page styles */
+
+.shortener_link_container {
+    @include border-border-radius-background($border-wrapper, $border-radius-wrapper, $blue-color);
+    display: grid;
+    margin: 50px 15vw 0px 15vw;
+    grid-template-rows: 25vh 60vh;
+
+    input {
+        @include width-height(335px, 35px);
+        @include border-border-radius-background($border-input, $border-radius-button, $whitesmoke-color);
+        font-size: $font-size-primary;
+        padding-left: $padding-left-input;
+        margin-top: 50px;
+        transition: $transition-primary;
+    }
+
+    button {
+        @include width-height(350px, 50px);
+        @include border-border-radius-background($border-button, $border-radius-button, $background-color-button);
+        font-size: $font-size-primary;
+        margin-top: 100px;
+        cursor: pointer;
+        transition: $transition-primary;
+
+        &:hover {
+            @include border-border-radius-background($border: $border-button-hover, $background-color: $background-color-button-hover);
+            color: $whitesmoke-color;
+        }
+    }
+}
+
+.main_info_shortener {
+    display: grid;
+    padding-top: 30px;
+}
+
+.logo_info {
+    font-weight: bold;
+    text-align: center;
+    color: $whitesmoke-color;
+}
+
+.shortener_form {
+    display: grid;
+    grid-template-rows: 1fr 3fr 10fr;
+
+    h1 {
+        @include display-text-align;
+        @include font-size-weight-color(1.5rem, lighter, $black-color);
+    }
+
+    button {
+        margin-right: auto;
+        margin-left: auto;
+    }
+}
+
+.input_url {
+    display: grid;
+
+    input {
+        margin-right: auto;
+        margin-left: auto;
+    }
+}
+
+.new_short_url {
+    @include width-height(80%);
+    @include font-size-weight-color(1.2rem, bold);
+    @include border-border-radius-background(5px solid rgb(0, 60, 255), 15px, rgb(0, 162, 255));
+    text-align: center;
+    margin: 30px auto 0px auto;
+    padding-top: 15px;
+}
+
+.short_buttons {
+    display: grid;
+    padding-bottom: 50px;
+}
+
+/* shortenedlinks_page styles */
+
+.shortened_links_container {
+    @include width-height(80vw);
+    @include border-border-radius-background(7px solid darkblue, 35px, rgb(8, 136, 240));
+    display: grid;
+    grid-template-rows: 15vh 1fr;
+    margin-top: 50px;
+    margin-right: auto;
+    margin-left: auto;
+
+    h1 {
+    @include display-text-align;
+    }
+}
+
+.main_info_shortened {
+    @include width-height(80vw);
+    @include font-size-weight-color(2.5rem, bold, $whitesmoke-color);
+    text-align: center;
+}
+
+.slogan {
+    font-weight: normal;
+}
+
+.shortened_links_list {
+    @include width-height(80vw);
+    @include border-border-radius-background(7px solid rgb(85, 47, 255), 25px);
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.shortened_links_header, .list_row {
+    display: grid;
+    grid-template-columns: 22vw 18vw 13vw 10vw 15vw;
+    padding: 10px;
+    align-items: center;
+}
+
+.shortened_links_header {
+    @include font-size-weight-color(1.2rem, bold);
+    @include border-border-radius-background(3px solid white, 15px 15px 0px 0px, rgb(15, 60, 207));
+}
+
+.list_row {
+    border-bottom: 2px solid whitesmoke;
+}
+
+.list_cell {
+    padding: 7px;
+}

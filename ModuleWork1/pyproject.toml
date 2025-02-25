@@ -1,0 +1,12 @@
+[project]
+name = "shortener"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "fastapi[standard]>=0.115.5",
+    "passlib[argon2]>=1.7.4",
+    "pyjwt>=2.10.1",
+    "setuptools>=75.6.0",
+]

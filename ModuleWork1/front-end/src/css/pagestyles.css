@@ -1,0 +1,302 @@
+* {
+    margin: 0;
+    font-family: "Courier", serif;
+  }
+  
+  body {
+    background: rgb(0, 87, 178);
+  }
+  
+  /* login_page styles */
+  .login_form_container {
+    border: 5px solid black;
+    border-radius: 25px;
+    background-color: rgb(0, 120, 250);
+    display: grid;
+    grid-template-columns: 3fr 4fr;
+    margin: 15vh 15vw 0px 15vw;
+  }
+  
+  .main_info_login {
+    display: grid;
+    text-align: center;
+  }
+  
+  .line {
+    font-size: 3.5rem;
+    font-weight: bold;
+    color: whitesmoke;
+    padding-top: 50px;
+  }
+  .line:nth-child(2) {
+    font-size: 2rem;
+    font-weight: normal;
+    color: whitesmoke;
+    padding-top: 0px;
+  }
+  
+  .login_form {
+    display: grid;
+    grid-template-rows: repeat(4, 1fr);
+    padding: 20px 0px 20px 0px;
+    gap: 15px;
+  }
+  .login_form input {
+    width: 50%;
+    height: 50px;
+    border: 2px solid darkgray;
+    border-radius: 10px;
+    background-color: whitesmoke;
+    font-size: 0.8rem;
+    padding-left: 10px;
+    margin: 0px auto 0px auto;
+    transition: 0.5s ease;
+  }
+  .login_form input:focus {
+    border: 3px solid gray;
+    border-radius: 10px;
+    background-color: lightgray;
+  }
+  .login_form button {
+    width: 50%;
+    height: 100%;
+    border: 3px solid rgb(0, 46, 253);
+    border-radius: 10px;
+    background-color: rgb(5, 163, 255);
+    font-size: 1rem;
+    margin: 0px auto 0px auto;
+    cursor: pointer;
+    transition: 0.5s ease;
+  }
+  .login_form button:hover {
+    border: 2px solid whitesmoke;
+    border-radius: 10px;
+    background-color: rgb(13, 29, 255);
+    color: whitesmoke;
+  }
+  .login_form .have_account {
+    width: 40%;
+    height: 100%;
+    margin: 0px auto 0px auto;
+    background-color: rgb(0, 110, 255);
+  }
+  
+  footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 75px;
+    background: rgb(0, 153, 255);
+    text-align: center;
+  }
+  
+  /* register_page styles */
+  .register_form_container {
+    border: 5px solid black;
+    border-radius: 25px;
+    background-color: rgb(0, 120, 250);
+    display: grid;
+    grid-template-rows: 1fr 3fr;
+    margin: 7vh 15vw 0px 15vw;
+  }
+  
+  .main_info_register {
+    font-size: 4rem;
+    font-weight: bold;
+    color: whitesmoke;
+    display: grid;
+    gap: 50px;
+    text-align: center;
+  }
+  .main_info_register .line {
+    margin-top: -30px;
+  }
+  
+  .register_form {
+    display: grid;
+  }
+  .register_form input {
+    width: 350px;
+    height: 35px;
+    border: 2px solid darkgray;
+    border-radius: 10px;
+    background-color: whitesmoke;
+    font-size: 1rem;
+    padding-left: 10px;
+    margin: 50px auto 0px auto;
+    transition: 0.5s ease;
+  }
+  .register_form button {
+    width: 300px;
+    height: 50px;
+    border: 3px solid rgb(0, 46, 253);
+    border-radius: 10px;
+    background-color: rgb(5, 163, 255);
+    margin: 75px auto 50px auto;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: 0.5s ease;
+  }
+  .register_form button:hover {
+    border: 2px solid whitesmoke;
+    border-radius: 10px;
+    background-color: rgb(13, 29, 255);
+    color: whitesmoke;
+  }
+  
+  /* linkshortener_page styles */
+  .shortener_link_container {
+    border: 5px solid black;
+    border-radius: 25px;
+    background-color: rgb(0, 120, 250);
+    display: grid;
+    margin: 50px 15vw 0px 15vw;
+    grid-template-rows: 25vh 60vh;
+  }
+  .shortener_link_container input {
+    width: 335px;
+    height: 35px;
+    border: 2px solid darkgray;
+    border-radius: 10px;
+    background-color: whitesmoke;
+    font-size: 1rem;
+    padding-left: 10px;
+    margin-top: 50px;
+    transition: 0.5s ease;
+  }
+  .shortener_link_container button {
+    width: 350px;
+    height: 50px;
+    border: 3px solid rgb(0, 46, 253);
+    border-radius: 10px;
+    background-color: rgb(5, 163, 255);
+    font-size: 1rem;
+    margin-top: 100px;
+    cursor: pointer;
+    transition: 0.5s ease;
+  }
+  .shortener_link_container button:hover {
+    border: 2px solid whitesmoke;
+    border-radius: 10px;
+    background-color: rgb(13, 29, 255);
+    color: whitesmoke;
+  }
+  
+  .main_info_shortener {
+    display: grid;
+    padding-top: 30px;
+  }
+  
+  .logo_info {
+    font-weight: bold;
+    text-align: center;
+    color: whitesmoke;
+  }
+  
+  .shortener_form {
+    display: grid;
+    grid-template-rows: 1fr 3fr 10fr;
+  }
+  .shortener_form h1 {
+    display: grid;
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: lighter;
+    color: black;
+  }
+  .shortener_form button {
+    margin-right: auto;
+    margin-left: auto;
+  }
+  
+  .input_url {
+    display: grid;
+  }
+  .input_url input {
+    margin-right: auto;
+    margin-left: auto;
+  }
+  
+  .new_short_url {
+    width: 80%;
+    height: 100%;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: whitesmoke;
+    border: 5px solid rgb(0, 60, 255);
+    border-radius: 15px;
+    background-color: rgb(0, 162, 255);
+    text-align: center;
+    margin: 30px auto 0px auto;
+    padding-top: 15px;
+  }
+  
+  .short_buttons {
+    display: grid;
+    padding-bottom: 50px;
+  }
+  
+  /* shortenedlinks_page styles */
+  .shortened_links_container {
+    width: 80vw;
+    height: 100%;
+    border: 7px solid darkblue;
+    border-radius: 35px;
+    background-color: rgb(8, 136, 240);
+    display: grid;
+    grid-template-rows: 15vh 1fr;
+    margin-top: 50px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+  .shortened_links_container h1 {
+    display: grid;
+    text-align: center;
+  }
+  
+  .main_info_shortened {
+    width: 80vw;
+    height: 100%;
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: whitesmoke;
+    text-align: center;
+  }
+  
+  .slogan {
+    font-weight: normal;
+  }
+  
+  .shortened_links_list {
+    width: 80vw;
+    height: 100%;
+    border: 7px solid rgb(85, 47, 255);
+    border-radius: 25px;
+    background-color: transparent;
+    text-align: center;
+    box-sizing: border-box;
+  }
+  
+  .shortened_links_header, .list_row {
+    display: grid;
+    grid-template-columns: 22vw 18vw 13vw 10vw 15vw;
+    padding: 10px;
+    align-items: center;
+  }
+  
+  .shortened_links_header {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: whitesmoke;
+    border: 3px solid white;
+    border-radius: 15px 15px 0px 0px;
+    background-color: rgb(15, 60, 207);
+  }
+  
+  .list_row {
+    border-bottom: 2px solid whitesmoke;
+  }
+  
+  .list_cell {
+    padding: 7px;
+  }
